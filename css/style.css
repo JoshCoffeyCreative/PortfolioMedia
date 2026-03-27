@@ -1,0 +1,261 @@
+/* =========================
+   ROOT VARIABLES
+========================== */
+:root {
+  --radius: 14px;
+  --panel-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --panel-gap: 24px;
+  --marker-width: 92px;
+  --marker-offset: 24px;
+  --section-padding-y: 100px;
+  --section-padding-x: 16px;
+  --surface-blue: #e6f0ff;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================== */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: white;
+  transition: background 0.2s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+p {
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+/* =========================
+   LAYOUT / STRUCTURE
+========================== */
+.stage {
+  min-height: 80vh;
+  padding: var(--section-padding-y) 0;
+  position: relative;
+}
+
+.container {
+  width: min(1440px, 92vw);
+  margin: 0 auto;
+  position: relative;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+/* =========================
+   NAVIGATION
+========================== */
+.site-nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.site-nav .brand {
+  font-size: clamp(1.25rem, 2vw, 1.8rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.site-nav .nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   HERO SECTION
+========================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin-bottom: 12px;
+}
+
+.hero h3 {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.hero h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 40px;
+}
+
+/* =========================
+   ICEBERG GRAPHIC
+========================== */
+.iceberg-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.iceberg-svg {
+  width: min(520px, 80vw);
+  height: auto;
+}
+
+/* =========================
+   WORK GRID
+========================== */
+.work-item {
+  display: block;
+  text-decoration: none;
+  color: white;
+}
+
+.work-item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.4s ease;
+}
+
+.work-item:hover img {
+  transform: scale(1.05);
+}
+
+.work-text {
+  margin-top: 10px;
+}
+
+.work-text h5 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.work-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+/* =========================
+   DEVELOPMENT SECTION
+========================== */
+.development-image {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.development-text {
+  margin-top: 20px;
+}
+
+/* =========================
+   SKILLS GRID
+========================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--panel-gap);
+}
+
+.skill {
+  background: #3c2566;
+  border-radius: var(--radius);
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* =========================
+   DEPTH MARKERS
+========================== */
+.depth-marker {
+  position: absolute;
+  top: 32px;
+  left: calc(100% + var(--marker-offset));
+  width: var(--marker-width);
+  background: var(--surface-blue);
+  color: #1a1a1a;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.depth-marker::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  width: 18px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.7);
+  transform: translateY(-50%);
+}
+
+/* =========================
+   RESPONSIVE STYLES
+========================== */
+@media (max-width: 1199px) {
+  .depth-marker {
+    left: auto;
+    right: 0;
+  }
+
+  .depth-marker::before {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .depth-marker {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  .stage {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Joshua Coffey</title>
+<link rel="icon" href="img/favicon2.png">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+<style>
+:root{
+  --radius:28px;
+  --section-padding-x:20px;
+  --text-dark:#ffffff;
+  --text-soft:rgba(255,255,255,0.86);
+  --line:rgba(255,255,255,0.18);
+  --shadow:0 16px 32px rgba(0,0,0,0.10);
+  --panel:rgba(255,255,255,0.08);
+  --panel-strong:rgba(255,255,255,0.10);
+}
+
+/* BASE */
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+  color:var(--text-dark);
+  background:linear-gradient(to bottom, rgb(149,205,254), rgb(80,140,210));
+  text-shadow:0 1px 4px rgba(0,0,0,0.20);
+}
+
+.container{
+  width:min(1180px, 92vw);
+  margin:0 auto;
+  padding-left:var(--section-padding-x);
+  padding-right:var(--section-padding-x);
+}
+
+/* NAV (COPIED 1:1) */
+
+.site-nav{
+  padding:22px 0 0;
+}
+
+.site-nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  font-size:clamp(1.2rem,2vw,1.8rem);
+  font-weight:700;
+  color:var(--text-dark);
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+.nav-links{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  background:rgba(255,255,255,0.10);
+  padding:12px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.14);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--text-dark);
+  font-size:1rem;
+}
+
+/* HERO */
+
+.hero{
+  margin-top:28px;
+  border-radius:32px;
+  overflow:hidden;
+  height:70vh;
+  min-height:420px;
+  border:1px solid rgba(255,255,255,0.18);
+  box-shadow:var(--shadow);
+}
+
+.hero img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* TEXT */
+
+.content{
+  max-width:760px;
+  margin-top:40px;
+  margin-bottom:100px;
+}
+
+/* TYPOGRAPHY */
+
+.kicker{
+  font-size:.88rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.82;
+  margin-bottom:12px;
+}
+
+h1{
+  font-size:clamp(2.8rem, 5vw, 4.5rem);
+  line-height:.94;
+  margin-bottom:16px;
+}
+
+p{
+  font-size:1.03rem;
+  line-height:1.65;
+  color:var(--text-soft);
+  margin-bottom:16px;
+}
+
+/* MOBILE */
+
+@media (max-width:767px){
+  :root{
+    --section-padding-x:16px;
+  }
+
+  .site-nav-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .nav-links{
+    gap:12px;
+    padding:10px 12px;
+  }
+
+  .hero{
+    height:50vh;
+    border-radius:24px;
+  }
+
+  .content{
+    margin-top:30px;
+  }
+
+  h1{
+    font-size:2.4rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="container">
+    <div class="site-nav-inner">
+      <a href="index.html" class="brand">Joshua Coffey</a>
+      <div class="nav-links">
+        <a href="aboutme.html">About me</a>
+        <a href="index.html#work">Portfolio</a>
+        <a href="https://substack.com/@joshuacoffey/posts">Blog</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <img src="img/headshot.jpg" alt="About me image">
+    </section>
+
+    <!-- TEXT -->
+    <section class="content">
+
+      <p class="kicker">About Me</p>
+
+      <h1>
+        I create digital experiences through motion, interaction and structure.
+      </h1>
+
+      <p>
+        I am a Creative Media Technology student in my final year at Leeds Beckett University, where I have developed a practice that sits between design and development. My work focuses on creating digital experiences that feel intuitive, visually engaging and carefully structured, allowing users to understand how to interact without needing explicit instruction.
+      </p>
+
+      <p>
+        My approach is rooted in clarity first. I aim to design experiences that guide users naturally through layout, motion and feedback, rather than relying on explanation. This means balancing visual identity with usability, ensuring that the work is not only expressive but also immediately understandable.
+      </p>
+
+      <p>
+        Outside of the technical side of my work, I am someone who values thoughtful design and continuous improvement. I tend to approach projects with a strong attention to detail, often refining and questioning decisions until they feel resolved. I enjoy understanding how things work, both visually and logically, and this curiosity drives the way I learn and develop.
+      </p>
+
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>
